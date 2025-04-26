@@ -5,8 +5,12 @@ export default {
     extend: {
       colors: {
         hoverColor: "#FFC000",
-        brightColor: "#dd8036",
-        backgroundColor: "#36ae9a",
+        brightColor: "#0054AD",
+        backgroundColor: "#fff",
+
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

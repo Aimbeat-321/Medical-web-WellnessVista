@@ -1,42 +1,37 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Services from "./components/Services";
-import Doctors from "./components/Doctors";
-import Blogs from "./components/Blogs";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const App = () => {
+// Pages
+import Home from "./components/Home";
+import Mission from "./pages/MissionVision";
+import Products from "./pages/OurProducts";
+import Career from "./pages/Career";
+import Investors from "./pages/Investors";
+import Expansion from "./pages/ReachAndExpansion";
+import Contact from "./pages/Contact";
+
+function App() {
   return (
-    <div>
-      <Navbar />
-
-      <main>
-        <div id="home">
-          <Home />
-        </div>
-
-        <div id="about">
-          <About />
-        </div>
-
-        <div id="services">
-          <Services />
-        </div>
-
-        <div id="doctors">
-          <Doctors />
-        </div>
-
-        <div id="blog">
-          <Blogs />
-        </div>
+    <Router>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mission" element={<Mission />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/expansion" element={<Expansion />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
-
-      <Footer />
+      <Footer /> 
     </div>
+  </Router>
   );
-};
+}
 
 export default App;
